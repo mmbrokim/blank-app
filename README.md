@@ -13,7 +13,7 @@ features/
   badger/               EP.1 벌꿀오소리 그림 (EP.2부터 안 씀, 기록용)
     badger.css
     badger.webp
-  badger-dance/         EP.2 춤추는 벌꿀오소리 (종료 버튼 누르면 멈춤)
+  badger-dance/         EP.2 춤추는 벌꿀오소리 (종료 버튼 → 멈춤, 오소리 누르면 → 이어서 춤)
     badger-dance.css
     badger-dance.js
     badger-dance.webp   16프레임 가로 한 줄 스프라이트

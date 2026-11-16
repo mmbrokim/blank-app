@@ -28,6 +28,11 @@
   animation-play-state: paused;
 }
 
+/* 멈춰 있을 때만 "누를 수 있음" 표시 (누르면 이어서 춤) */
+#badger-dance .badger-dance-window.badger-dance-paused {
+  cursor: pointer;
+}
+
 @keyframes badger-dance-steps {
   from { transform: translateX(0); }
   to   { transform: translateX(-100%); }
