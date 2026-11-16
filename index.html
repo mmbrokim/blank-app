@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="style.css">
   <!-- 기능별 스타일 (기능마다 한 줄씩 추가) -->
   <link rel="stylesheet" href="features/badger/badger.css">
+  <link rel="stylesheet" href="features/exit-button/exit-button.css">
 </head>
 <body>
   <main id="app">
@@ -18,6 +19,11 @@
       <img class="badger-img" src="features/badger/badger.webp" alt="선글라스를 낀 벌꿀오소리" draggable="false">
     </section>
 
+    <!-- ===== EP.1: 앱 종료 버튼 ===== -->
+    <section id="exit-button" class="feature">
+      <button type="button" class="exit-btn">종료</button>
+    </section>
+
     <!-- 새 기능은 이 아래에 <section id="기능이름" class="feature"> ... </section> 로 추가 -->
 
   </main>
@@ -25,5 +31,6 @@
   <!-- 앱 공통 스크립트 -->
   <script src="script.js"></script>
   <!-- 기능별 스크립트 (기능마다 한 줄씩 추가) -->
+  <script src="features/exit-button/exit-button.js"></script>
 </body>
 </html>

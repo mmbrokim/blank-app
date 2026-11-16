@@ -13,6 +13,9 @@ features/
   badger/               EP.1 벌꿀오소리 그림
     badger.css
     badger.webp
+  exit-button/          EP.1 종료 버튼 (누르면 흔들림)
+    exit-button.css
+    exit-button.js
 ```
 
 ## 새 기능 추가하는 법

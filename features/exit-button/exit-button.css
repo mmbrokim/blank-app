@@ -1,0 +1,30 @@
+/* ===== EP.1: 앱 종료 버튼 (중앙에 큼지막하게) =====
+   모든 선택자는 #exit-button 안에서만 적용되고,
+   애니메이션 이름에는 exit- 를 붙여 다른 기능과 겹치지 않게 합니다. */
+
+#exit-button .exit-btn {
+  width: min(72vw, 300px);
+  padding: 22px 0;
+  border: 0;
+  border-radius: 22px;
+  background: #e53935;
+  color: #fff;
+  font-family: inherit;
+  font-size: clamp(30px, 9vw, 40px);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  box-shadow: 0 8px 0 #a3201d, 0 14px 24px #e5393555;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 누르면 좌우로 덜덜 */
+#exit-button .exit-btn.exit-shake {
+  animation: exit-shake 0.4s;
+}
+
+@keyframes exit-shake {
+  15%, 55% { transform: translateX(-10px) rotate(-2deg); }
+  35%, 75% { transform: translateX(10px) rotate(2deg); }
+  100%     { transform: translateX(0); }
+}
