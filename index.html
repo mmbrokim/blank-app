@@ -8,15 +8,18 @@
   <!-- 앱 공통 스타일 -->
   <link rel="stylesheet" href="style.css">
   <!-- 기능별 스타일 (기능마다 한 줄씩 추가) -->
-  <link rel="stylesheet" href="features/badger/badger.css">
+  <!-- (EP.1 badger.css 는 EP.2 춤추는 오소리로 바뀌면서 뺐습니다. 폴더는 기록용으로 남겨둠) -->
+  <link rel="stylesheet" href="features/badger-dance/badger-dance.css">
   <link rel="stylesheet" href="features/exit-button/exit-button.css">
 </head>
 <body>
   <main id="app">
 
-    <!-- ===== EP.1: 벌꿀오소리 그림 ===== -->
-    <section id="badger" class="feature">
-      <img class="badger-img" src="features/badger/badger.webp" alt="선글라스를 낀 벌꿀오소리" draggable="false">
+    <!-- ===== EP.2: 춤추는 벌꿀오소리 (EP.1 오소리 그림 자리를 대신함) ===== -->
+    <section id="badger-dance" class="feature">
+      <div class="badger-dance-window">
+        <img class="badger-dance-sheet" src="features/badger-dance/badger-dance.webp" alt="춤추는 선글라스 벌꿀오소리" draggable="false">
+      </div>
     </section>
 
     <!-- ===== EP.1: 앱 종료 버튼 ===== -->
@@ -32,5 +35,6 @@
   <script src="script.js"></script>
   <!-- 기능별 스크립트 (기능마다 한 줄씩 추가) -->
   <script src="features/exit-button/exit-button.js"></script>
+  <script src="features/badger-dance/badger-dance.js"></script>
 </body>
 </html>

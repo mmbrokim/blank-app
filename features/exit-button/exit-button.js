@@ -11,5 +11,8 @@
     btn.classList.remove("exit-shake");
     void btn.offsetWidth; // 연타해도 처음부터 다시 흔들리게
     btn.classList.add("exit-shake");
+
+    // 다른 기능이 "종료 버튼 눌림"에 반응할 수 있게 신호만 보냄 (EP.2)
+    root.dispatchEvent(new CustomEvent("exit-button:press", { bubbles: true }));
   });
 })();
