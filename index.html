@@ -2,15 +2,28 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>빈 앱</title>
+
+  <!-- 앱 공통 스타일 -->
   <link rel="stylesheet" href="style.css">
+  <!-- 기능별 스타일 (기능마다 한 줄씩 추가) -->
+  <link rel="stylesheet" href="features/badger/badger.css">
 </head>
 <body>
   <main id="app">
-    <!-- 여기에 댓글로 정해진 기능이 하나씩 추가됩니다 -->
+
+    <!-- ===== EP.1: 벌꿀오소리 그림 ===== -->
+    <section id="badger" class="feature">
+      <img class="badger-img" src="features/badger/badger.webp" alt="선글라스를 낀 벌꿀오소리" draggable="false">
+    </section>
+
+    <!-- 새 기능은 이 아래에 <section id="기능이름" class="feature"> ... </section> 로 추가 -->
+
   </main>
 
+  <!-- 앱 공통 스크립트 -->
   <script src="script.js"></script>
+  <!-- 기능별 스크립트 (기능마다 한 줄씩 추가) -->
 </body>
 </html>

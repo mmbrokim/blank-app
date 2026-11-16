@@ -1,0 +1,10 @@
+/* ===== EP.1: 벌꿀오소리 그림 =====
+   모든 선택자는 #badger 안에서만 적용됩니다. */
+
+#badger .badger-img {
+  display: block;
+  width: min(70vw, 300px);
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}

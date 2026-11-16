@@ -1,4 +1,10 @@
-/* 기본 초기화 */
+/* =========================================================
+   앱 공통 스타일
+   - 여기에는 "앱 전체"에 적용되는 것만 둡니다.
+   - 기능별 스타일은 features/epN/epN.css 에 넣고,
+     선택자는 반드시 #epN 으로 시작하게 합니다.
+   ========================================================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,22 +12,35 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
   background: #ffffff;
+  color: #111;
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
     "Noto Sans KR", sans-serif;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* 쇼츠 촬영용: 화면 전체를 쓰고 가운데 정렬 */
+/* 기능들이 위에서 아래로 쌓이는 영역 */
 #app {
-  min-height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  padding: 24px;
+  gap: 32px;
+  padding: 38px 16px 64px;
+}
+
+/* 모든 기능 블록의 공통 틀 */
+.feature {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
