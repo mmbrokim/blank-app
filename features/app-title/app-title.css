@@ -1,0 +1,44 @@
+/* ===== EP.3: 앱 제목 (그리스 문자) ===== */
+
+/* 글씨체 6개 (전부 SIL Open Font License 1.1 → OFL-*.txt, 지우지 말 것)
+   모두 그리스 문자만 들어 있는 파일이라 가벼움. */
+@font-face { font-family: "app-title-didot";   src: url("gfs-didot.woff2") format("woff2");                  font-weight: 400; font-display: swap; }
+@font-face { font-family: "app-title-pixel";   src: url("press-start-2p.woff2") format("woff2");             font-weight: 400; font-display: swap; }
+@font-face { font-family: "app-title-brush";   src: url("mansalva.woff2") format("woff2");                   font-weight: 400; font-display: swap; }
+@font-face { font-family: "app-title-robot";   src: url("tektur.woff2") format("woff2");                     font-weight: 900; font-display: swap; }
+@font-face { font-family: "app-title-round";   src: url("comfortaa.woff2") format("woff2");                  font-weight: 700; font-display: swap; }
+@font-face { font-family: "app-title-tall";    src: url("sofia-sans-extra-condensed.woff2") format("woff2"); font-weight: 900; font-display: swap; }
+
+#app-title .app-title-text {
+  font-size: 44px;
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  min-height: 1.4em;          /* 글씨체가 바뀌어도 아래 오소리가 덜 들썩이게 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* 누를 때마다 바뀌는 글씨체 (JS의 FONTS 목록과 이름을 맞출 것)
+   글씨체마다 폭이 달라서 크기·자간을 따로 맞춤 */
+#app-title .app-title-font-didot { font-family: "app-title-didot", serif;      font-weight: 400; }
+#app-title .app-title-font-pixel { font-family: "app-title-pixel", monospace;  font-weight: 400; font-size: 34px; letter-spacing: 0.05em; }
+#app-title .app-title-font-brush { font-family: "app-title-brush", cursive;    font-weight: 400; font-size: 50px; letter-spacing: 0.08em; }
+#app-title .app-title-font-robot { font-family: "app-title-robot", sans-serif; font-weight: 900; }
+#app-title .app-title-font-round { font-family: "app-title-round", sans-serif; font-weight: 700; }
+#app-title .app-title-font-tall  { font-family: "app-title-tall", sans-serif;  font-weight: 900; font-size: 60px; letter-spacing: 0.06em; }
+
+/* 바뀔 때 살짝 튕기는 효과 */
+#app-title .app-title-pop {
+  animation: app-title-pop 0.25s ease-out;
+}
+@keyframes app-title-pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.15) rotate(-3deg); }
+  100% { transform: scale(1); }
+}

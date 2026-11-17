@@ -3,17 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>빈 앱</title>
+  <title>ΣΧΟΛΙΑ</title>
 
   <!-- 앱 공통 스타일 -->
   <link rel="stylesheet" href="style.css">
   <!-- 기능별 스타일 (기능마다 한 줄씩 추가) -->
   <!-- (EP.1 badger.css 는 EP.2 춤추는 오소리로 바뀌면서 뺐습니다. 폴더는 기록용으로 남겨둠) -->
+  <link rel="stylesheet" href="features/app-title/app-title.css">
   <link rel="stylesheet" href="features/badger-dance/badger-dance.css">
   <link rel="stylesheet" href="features/exit-button/exit-button.css">
 </head>
 <body>
   <main id="app">
+
+    <!-- ===== EP.3: 앱 제목 (그리스 문자, ΣΧΟΛΙΑ = "댓글") ===== -->
+    <section id="app-title" class="feature">
+      <h1 class="app-title-text">ΣΧΟΛΙΑ</h1>
+    </section>
 
     <!-- ===== EP.2: 춤추는 벌꿀오소리 (EP.1 오소리 그림 자리를 대신함) ===== -->
     <section id="badger-dance" class="feature">
@@ -34,6 +40,7 @@
   <!-- 앱 공통 스크립트 -->
   <script src="script.js"></script>
   <!-- 기능별 스크립트 (기능마다 한 줄씩 추가) -->
+  <script src="features/app-title/app-title.js"></script>
   <script src="features/exit-button/exit-button.js"></script>
   <script src="features/badger-dance/badger-dance.js"></script>
 </body>
