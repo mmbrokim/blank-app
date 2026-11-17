@@ -1,0 +1,95 @@
+/* ===== EP.4: 오소리 분신술 =====
+   춤추는 오소리(EP.2)를 누를 때마다 작은 분신이 화면 곳곳에 튀어나옵니다.
+   모든 선택자는 #badger-clone 안에서만 적용되고,
+   클래스·애니메이션 이름에는 badger-clone- 를 붙입니다.
+
+   badger-clone.webp 는 EP.2 와 같은 16프레임 스프라이트(복사본)입니다. */
+
+/* 제목 바로 밑에 붙는 마리 수 숫자 배지 자리 (1마리일 땐 자리만 차지하고 안 보임) */
+#badger-clone {
+  margin: -18px 0 -14px;
+}
+
+#badger-clone .badger-clone-count {
+  position: relative;
+  z-index: 11; /* 분신들보다 위 */
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: #111;
+  color: #ffd400;
+  font-size: 13px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  visibility: hidden;
+}
+
+#badger-clone .badger-clone-count.badger-clone-show {
+  visibility: visible;
+  animation: badger-clone-pop 0.25s ease-out;
+}
+
+/* 분신들이 뛰노는 층: 배지 바로 밑부터 화면 아래 끝까지 덮지만 손가락은 그대로 통과
+   (그래서 분신에 가려져도 원래 오소리·종료 버튼은 계속 눌림)
+   --top(배지 아래 위치)은 JS 가 재서 넣어줌 */
+#badger-clone .badger-clone-layer {
+  --w: min(19vw, 84px); /* 분신 한 마리 너비 */
+  --top: 22vh;
+  position: fixed;
+  top: var(--top);
+  left: 50%;
+  width: min(100vw, 480px);
+  height: calc(100vh - var(--top));
+  height: calc(100dvh - var(--top));
+  transform: translateX(-50%);
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* 분신 한 마리. --x, --y (0~1) 는 JS 가 무작위로 정해줌 */
+#badger-clone .badger-clone-window {
+  position: absolute;
+  width: var(--w);
+  aspect-ratio: 120 / 141; /* 프레임 한 칸의 비율 */
+  left: calc(var(--x) * (100% - var(--w)));
+  top: calc(var(--y) * (100% - var(--w) * 1.175));
+  overflow: hidden;
+  animation: badger-clone-pop 0.25s ease-out;
+}
+
+#badger-clone .badger-clone-sheet {
+  display: block;
+  width: 1600%; /* 16프레임 */
+  height: 100%;
+  max-width: none;
+  -webkit-user-drag: none;
+  /* 프레임당 0.1초 × 16 = 1.6초에 한 바퀴 */
+  animation: badger-clone-steps 1.6s steps(16) infinite;
+}
+
+/* 종료 버튼 → 분신 전부 그 포즈로 멈춤 */
+#badger-clone.badger-clone-stopped .badger-clone-sheet {
+  animation-play-state: paused;
+}
+
+/* 128마리 다 찼는데 또 누르면 → 분신 전체가 덜덜 */
+#badger-clone .badger-clone-layer.badger-clone-shake {
+  animation: badger-clone-shake 0.4s;
+}
+
+@keyframes badger-clone-steps {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+@keyframes badger-clone-pop {
+  from { transform: scale(0.3); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+/* 층 자체가 translateX(-50%) 로 가운데 맞춰져 있어서 그 위에 흔들림을 더함 */
+@keyframes badger-clone-shake {
+  15%, 55% { transform: translateX(calc(-50% - 8px)) rotate(-1.5deg); }
+  35%, 75% { transform: translateX(calc(-50% + 8px)) rotate(1.5deg); }
+  100%     { transform: translateX(-50%); }
+}

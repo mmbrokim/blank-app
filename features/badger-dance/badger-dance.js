@@ -23,5 +23,8 @@
   win.addEventListener("click", () => {
     sheet.classList.remove("badger-dance-stopped");
     win.classList.remove("badger-dance-paused");
+
+    // 다른 기능이 "오소리 눌림"에 반응할 수 있게 신호만 보냄 (EP.4)
+    root.dispatchEvent(new CustomEvent("badger-dance:press", { bubbles: true }));
   });
 })();

@@ -21,8 +21,13 @@ features/
     badger.webp
   badger-dance/         EP.2 춤추는 벌꿀오소리 (종료 버튼 → 멈춤, 오소리 누르면 → 이어서 춤)
     badger-dance.css
-    badger-dance.js
+    badger-dance.js     오소리 누르면 "badger-dance:press" 신호 (EP.4)
     badger-dance.webp   16프레임 가로 한 줄 스프라이트
+  badger-clone/         EP.4 오소리 분신술 (오소리 누를 때마다 두 배, 128마리까지)
+    badger-clone.css
+    badger-clone.js     "badger-dance:press" 받으면 분신, 종료 버튼 → 멈춤,
+                        "badger-clone:change" / "badger-clone:full" 신호
+    badger-clone.webp   EP.2 스프라이트 복사본
   exit-button/          EP.1 종료 버튼 (누르면 흔들림)
     exit-button.css
     exit-button.js
@@ -43,7 +48,7 @@ features/
 - CSS 선택자는 `#기능이름`으로 시작하고, 클래스·애니메이션 이름에 `기능이름-`을 붙입니다.
 - 클릭 이벤트는 `document`나 `body`가 아니라 자기 `section` 안에만 겁니다.
 - 이미지는 `.webp`로, 가로 600px 안팎으로 줄여서 넣습니다. (여러 프레임을 이은 스프라이트는 한 칸 기준)
-- 다른 기능에 신호를 줄 때는 `CustomEvent`를 씁니다. 예: 종료 버튼은 눌릴 때 `exit-button:press`를, 제목은 눌릴 때 `app-title:press`를 보냅니다. 제목을 바꾸려면 `app-title:set`을 보냅니다.
+- 다른 기능에 신호를 줄 때는 `CustomEvent`를 씁니다. 예: 종료 버튼은 눌릴 때 `exit-button:press`를, 오소리는 눌릴 때 `badger-dance:press`를, 제목은 눌릴 때 `app-title:press`를 보냅니다. 제목을 바꾸려면 `app-title:set`을 보냅니다.
 
 ## 배포
 
